@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require 'spec_helper'
 
 TMP_DIR = File.dirname(__FILE__) + "/../test_tmp"
 

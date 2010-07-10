@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'seess'
+require 'seess/cli'

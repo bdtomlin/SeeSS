@@ -1,0 +1,6 @@
+= Overview
+
+== About SeeSS
+
+SeeSS is a base css template mostly taken from sencss (http://sencss.kilianvalkhof.com/)
+

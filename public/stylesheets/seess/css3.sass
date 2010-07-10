@@ -1,0 +1,37 @@
+@mixin rounder($tl: 0,$tr: 0,$br: 0,$bl: 0)
+  @if $tr + $br + $bl == 0
+    -webkit-border-radius: $tl
+    border-radius: $tl
+    -moz-border-radius: $tl
+  @else
+    @if $tl != 0
+      -webkit-border-top-left-radius: 5px
+      border-top-left-radius: 5px
+      -moz-border-radius-topleft: 5px
+    @if $tr != 0
+      -webkit-border-top-right-radius: 5px
+      border-top-right-radius: 5px
+      -moz-border-radius-topright: 5px
+    @if $br != 0
+      -webkit-border-bottom-right-radius: 5px
+      border-bottom-right-radius: 5px
+      -moz-border-radius-bottomright: 5px
+    @if $bl != 0
+      -webkit-border-bottom-left-radius: 5px
+      border-bottom-left-radius: 5px
+      -moz-border-radius-bottomleft: 5px
+
+@mixin bshadow($x,$y,$b,$color)
+  -webkit-box-shadow: $x $y $b $color
+  -moz-box-shadow: $x $y $b $color
+  box-shadow: $x $y $b $color
+
+@mixin bg-vert-gradient($start,$stop)
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start), to($stop))
+  background: -moz-linear-gradient(top,$start,$stop)
+  //ie6 and 7
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$start}', EndColorStr='#{$stop}')
+  //ie8
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$start}', EndColorStr='#{$stop}')"
+
+

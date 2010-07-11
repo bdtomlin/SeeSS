@@ -4,10 +4,11 @@ require "rspec"
 require "rspec/core/rake_task"
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+require 'seess/version'
 
 
 task :build do
-  system "gem build mongoid.gemspec"
+  system "gem build seess.gemspec"
 end
 
 task :install => :build do

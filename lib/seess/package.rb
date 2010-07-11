@@ -1,3 +1,5 @@
+require "fileutils" unless defined?(FileUtils)
+
 module SeeSS
 
   class Package

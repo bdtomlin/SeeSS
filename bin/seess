@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 require 'seess'
 require 'seess/cli'
+
+SeeSS::CLI.new(ARGV, STDOUT)

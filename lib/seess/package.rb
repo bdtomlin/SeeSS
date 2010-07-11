@@ -6,58 +6,45 @@ module SeeSS
 
     def initialize(directory)
       @seess_dir = (directory + '/seess')
+      @bak_dir = (directory + '/seess/bak')
+      @seess_file = @seess_dir + '/seess.sass'
+      @seess_ie_file = @seess_dir + '/ie.sass'
+
       @sass_dir = (directory + '/sass')
+      @custom_styles_file = @sass_dir + '/styles.sass'
+      @custom_ie_file = @sass_dir + '/ie.sass'
 
-      if File.directory?(@seess_dir)
-        if File.directory?(@seess_dir + '/bak')
-          FileUtils.rm_rf(@seess_dir + '/bak')
-        end
-        Dir.mkdir(@seess_dir + '/bak')
-        FileUtils.mv(Dir.glob("#@seess_dir/*.sass"), "#@seess_dir/bak")
-      end
+      backup if File.directory?(@seess_dir)
 
-      [@seess_dir, @sass_dir].each { |ivar| Dir.mkdir(ivar) unless File.exist?(ivar) }
+      Dir.mkdir(@seess_dir) unless File.directory?(@seess_dir)
+      Dir.mkdir(@sass_dir) unless File.directory?(@sass_dir)
 
-      write_seess_file
-      write_ie_file
+      write_file @seess_file, seess_content
 
-      write_styles_custom_file
-      write_ie_custom_file
+      write_file @seess_ie_file, File.read("#{PATH_TO_SOURCE_FILES}/ie.sass")
+
+      write_file(@custom_styles_file, "@import ../seess/seess.sass\n") unless File.exist?(@custom_styles_file)
+
+      write_file(@custom_ie_file, "@import ../seess/ie.sass\n") unless File.exist?(@custom_ie_file)
+
     end
 
 
     private
+      def backup
+        FileUtils.rm_rf(@bak_dir) if File.directory?(@bak_dir)
+        Dir.mkdir(@bak_dir)
+        FileUtils.mv(Dir.glob("#@seess_dir/*.sass"), @bak_dir)
+      end
 
-      def write_seess_file
-        seess_content = ''
-        SUBFILES_TO_INCLUDE.each do |sass_file|
-          seess_content += File.read("#{PATH_TO_SOURCE_FILES}/#{sass_file}.sass") + "\n"
-        end
-        File.open("#{@seess_dir}/seess.sass", 'w') do |f|
-          f.write(seess_content)
+      def seess_content
+        SUBFILES_TO_INCLUDE.inject('') do |result, sass_file|
+          result += File.read("#{PATH_TO_SOURCE_FILES}/#{sass_file}.sass") + "\n"
         end
       end
 
-      def write_ie_file
-        File.open("#{@seess_dir}/ie.sass", 'w') do |f|
-          f.write(File.read("#{PATH_TO_SOURCE_FILES}/ie.sass"))
-        end
-      end
-
-      def write_styles_custom_file
-        unless File.exist?(@sass_dir + "/styles.sass")
-          File.open(@sass_dir + "/styles.sass", 'w') do |f|
-            f.write %{@import ../seess/seess.sass\n}
-          end
-        end
-      end
-
-      def write_ie_custom_file
-        unless File.exist?(@sass_dir + "/ie.sass")
-          File.open(@sass_dir + "/ie.sass", 'w') do |f|
-            f.write %{@import ../seess/ie.sass\n}
-          end
-        end
+      def write_file(file,content)
+        File.open(file, 'w') { |f| f.write(content) }
       end
 
   end

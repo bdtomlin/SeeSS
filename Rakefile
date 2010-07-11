@@ -20,7 +20,7 @@ task :release => :build do
   puts "Pushing to Github..."
   system "git push --tags"
   #puts "Pushing to Gemcutter..."
-  #system "gem push mongoid-#{Seess::VERSION}.gem"
+  #system "gem push seess-#{Seess::VERSION}.gem"
 end
 
 Rspec::Core::RakeTask.new(:spec) do |spec|

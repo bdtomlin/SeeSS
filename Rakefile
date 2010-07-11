@@ -12,12 +12,12 @@ task :build do
 end
 
 task :install => :build do
-  system "gem install seess-#{Seess::VERSION}.gem"
+  system "gem install seess-#{SeeSS::VERSION}.gem"
 end
 
 task :release => :build do
-  puts "Tagging #{Seess::VERSION}..."
-  system "git tag -a #{Seess::VERSION} -m 'Tagging #{Seess::VERSION}'"
+  puts "Tagging #{SeeSS::VERSION}..."
+  system "git tag -a #{SeeSS::VERSION} -m 'Tagging #{SeeSS::VERSION}'"
   puts "Pushing to Github..."
   system "git push --tags"
   #puts "Pushing to Gemcutter..."

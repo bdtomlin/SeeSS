@@ -2,4 +2,4 @@
 require 'seess'
 require 'seess/cli'
 
-SeeSS::CLI.new(ARGV, STDOUT)
+SeeSS::CLI.new(ARGV, STDOUT).run

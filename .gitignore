@@ -7,6 +7,8 @@ coverage/*
 *.swp
 *.swo
 *.gem
+*.css
+public/stylesheets/.sass-cache/**
 
 
 coverage/*

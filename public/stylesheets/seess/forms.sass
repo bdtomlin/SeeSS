@@ -9,12 +9,12 @@ fieldset fieldset
   padding: 0 0 0 $line-height
 
 input
-  -moz-box-sizing: content-box
-  -webkit-box-sizing: content-box
-  -ms-box-sizing: content-box
-  box-sizing: content-box
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -ms-box-sizing: border-box
+  box-sizing: border-box
   font-size: $font-size
-  height: $line-height * 1.5 - 6px
+  height: $line-height * 1.5
   line-height: $line-height * 1.5 - 6px
   padding: 2px 5px
   margin: 0 0 $line-height / 2
@@ -25,9 +25,6 @@ input.text
   -webkit-border-radius: 5px
   -moz-border-radius: 5px
   border-radius: 5px
-  // border: 1px solid #bbb
-  // border-bottom-color: #999
-  // border-right-color: #999
   width: 100%
 
 input[type=file]

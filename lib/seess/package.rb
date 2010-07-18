@@ -3,7 +3,7 @@ require "fileutils" unless defined?(FileUtils)
 module SeeSS
 
   class Package
-    SUBFILES_TO_INCLUDE = [ "reset", "css3", "base", "forms", "buttons", "notices", "tables", "misc", "lists" ]
+    SUBFILES_TO_INCLUDE = [ "settings", "reset", "css3", "base", "forms", "buttons", "notices", "tables", "lists" ]
     PATH_TO_SOURCE_FILES = File.expand_path(File.dirname(__FILE__)+"/../../public/stylesheets/seess")
 
     def initialize(directory)

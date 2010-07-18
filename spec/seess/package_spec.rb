@@ -48,7 +48,7 @@ describe Package do
 
     it "should generate a file that matches the concatenated source files" do
       seess_content = ''
-      [ "reset", "css3", "base", "forms", "buttons", "notices", "tables", "misc", "lists" ].each do |file|
+      [ "settings", "reset", "css3", "base", "forms", "buttons", "notices", "tables", "lists" ].each do |file|
         seess_content += File.read("#{SRC_SEESS_DIR}/#{file}.sass") + "\n"
       end
       File.read(SEESS_FILE).should == seess_content

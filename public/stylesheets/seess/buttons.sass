@@ -42,5 +42,8 @@ a.button, button, input.button
   &:hover, &:focus
     background: #eee
     @include bg-vert-gradient(#fff,#ccc)
-    outline: 1px dotted #333
 
+@-moz-document url-prefix()
+  a.button, button, input.button
+    &:focus
+      outline: 1px dotted #333

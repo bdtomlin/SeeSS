@@ -4,7 +4,7 @@ var gOverride = {
   gOpacity: 0.35,
   gWidth: 10,
   pColor: '#000',
-  pHeight: 21,
+  pHeight: 22,
   pOffset: 0,
   pOpacity: 0.55,
   center: true,
@@ -16,7 +16,7 @@ var gOverride = {
 };
 
 createGridder = function() {
-  document.body.appendChild(document.createElement('script')).src='/960gridder/960.js';
+  document.body.appendChild(document.createElement('script')).src='/javascripts/960.js';
 };
 window.onload=function(){
  createGridder();

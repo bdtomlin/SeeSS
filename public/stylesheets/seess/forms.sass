@@ -1,38 +1,37 @@
 fieldset
   border: 0
-  margin: 0 0 1.5em
+  margin: 0 0 $line-height
   position: relative
   padding: 0
 fieldset fieldset
   clear: both
-  margin: 0 0 1.5em
-  padding: 0 0 0 20px
+  margin: 0 0 $line-height
+  padding: 0 0 0 $line-height
 
 input
-  box-sizing: border-box
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  -ms-box-sizing: border-box
-  font-size: 1em
-  height: 2em
-  *height: 1.5em
-  line-height: 1.5em
-  padding: 0.29em
-  margin: 0 0 1em
+  -moz-box-sizing: content-box
+  -webkit-box-sizing: content-box
+  -ms-box-sizing: content-box
+  box-sizing: content-box
+  font-size: $font-size
+  height: $line-height * 1.5 - 6px
+  line-height: $line-height * 1.5 - 6px
+  padding: 2px 5px
+  margin: 0 0 $line-height / 2
 
 input.text
   border: 1px inset #ccc
   background: #f9f9f9
-  -webkit-border-radius: 0.3em
-  -moz-border-radius: 0.3em
-  border-radius: 0.3em
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
   // border: 1px solid #bbb
   // border-bottom-color: #999
   // border-right-color: #999
   width: 100%
 
 input[type=file]
-  height: 2em
+  height: $line-height
   padding: 0
 
 textarea
@@ -41,15 +40,17 @@ textarea
   // border-right-color: #eee
   border: 1px inset #ccc
   background: #f9f9f9
-  -webkit-border-radius: 0.3em
-  -moz-border-radius: 0.3em
-  border-radius: 0.3em
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  -ms-box-sizing: border-box
-  box-sizing: border-box
-  margin: 0
-  padding: 0.29em
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  -moz-box-sizing: content-box
+  -webkit-box-sizing: content-box
+  -ms-box-sizing: content-box
+  box-sizing: content-box
+  font-size: $font-size
+  line-height: $line-height * 1.5 - 6px
+  padding: 2px
+  margin: 0 0 $line-height / 2
   width: 100%
 
 select
@@ -81,25 +82,20 @@ option
 label
   cursor: pointer
   display: block
-  height: 1.5em
+  height: $line-height
   *height: auto
-  *line-height: 1.4em
   margin: 0
   padding: 0
   width: 100%
 
 label input
-  background: 0
-  border: 0
-  height: 1em
-  *height: 1.5em
-  line-height: 1.5em
-  margin: 0 0.5em 0 0
-  padding: 0
-  width: auto
+  vertical-align: bottom
+  padding: none
+  margin: 0 7px 0 0
+  height: $line-height
 
 legend
-  font-size: 1.1666em
+  font-size: $font-size + 2
   font-weight: 700
   left: 0
   margin: 0

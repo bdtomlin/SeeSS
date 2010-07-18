@@ -1,20 +1,20 @@
 // Common classes - Some base classes for pretty typography, asides and messages.
 
-.error, .notice, .success, .warning, .errorExplanation 
-  border-width: 0.143em
+.error, .notice, .success, .warning, .errorExplanation
+  border-width: 1px
   border-style: solid
-  margin: 0 0 1.5em
-  padding: 1.357em
+  margin: 0 0 $line-height
+  padding: $line-height / 2 - 1
   text-align: center
 
 .notice
-  background: #C9D7EF
-  color: #1D478E
-  border-color: #1D478E
+  background: #c9d7ef
+  color: #1d478e
+  border-color: #1d478e
 
 .success
   background: #c0ffdd
-  color: #0E532E
+  color: #0e532e
   border-color: #2e925c
 
 .warning
@@ -30,11 +30,11 @@
     list-style-type: none
     font-weight: bold
 
-.fieldWithErrors input.text, .fieldWithErrors textarea 
+.fieldWithErrors input.text, .fieldWithErrors textarea
   background: #FEEAEA
   border-color: #A20000
 
-.fieldWithErrors label 
+.fieldWithErrors label
   color: #A20000
 
 .quo

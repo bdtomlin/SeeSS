@@ -1,17 +1,12 @@
 /* BUTTONS */
-button::-moz-focus-inner
+button::-moz-focus-inner, input::-moz-focus-inner
   border: 0
   padding: 0
-
 a.button, button, input.button
   display: -moz-inline-stack /* some versions of firefox don't like inline-block, use this for them */
   display: inline-block
   vertical-align: top
 
-  //-moz-box-sizing: border-box
-  //-webkit-box-sizing: border-box
-  //-ms-box-sizing: border-box
-  //box-sizing: border-box
   -moz-box-sizing: content-box
   -webkit-box-sizing: content-box
   -ms-box-sizing: content-box
@@ -30,7 +25,7 @@ a.button, button, input.button
 
   margin: 0 2px $line-height - 10
   background: #cfcfcf
-  @include bg-vert-gradient(#f7f7f7,#c4c4c4)
+  @include bg-vert-gradient(#eee,#bbb)
   border: 1px solid #b6b6b6
   border-bottom: 1px solid #bbb
   border-right: 1px solid #bbb
@@ -47,4 +42,5 @@ a.button, button, input.button
   &:hover, &:focus
     background: #eee
     @include bg-vert-gradient(#fff,#ccc)
+    outline: 1px dotted #333
 
